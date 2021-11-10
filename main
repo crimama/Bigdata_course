@@ -1,0 +1,92 @@
+#필드는 굴러가고 있는 알고리즘을 가져와서 사용하는 것
+
+#연구는 새로운 것을 만드는 것
+
+#범용적으로 만들어진 알고리즘을 잘 활용하는 것이 중요
+
+변수, 함수 둘 다 메모리
+
+리터럴, 메모리
+
+리터럴 : 100, 200, 'coefficient' <- 임시로 존재하는 메모리
+
+'keyboard'.capitalize().swapcase()
+var = 'keyboard'.capitalize().swapcase()
+# . 을 찍으면 리터럴이 갖는 멤버(함수)들을 불러온다 
+# ''을 찍으면 객체를 만들고, 멤버들을 불러온다 
+# 이것은 임시 메모리 
+# 메모리에 저장 하기 위해서 변수 선언 후 대입
+# 두개의 메모리를 갖는 데 한 곳엔 메모리, 한 곳엔 함수의 정보
+# 변수 선언하면 그 값만 갖고 가는 것인지? 아니면 
+print(var)
+kEYBOARD
+def myfunc():
+    return 200 #값을 전달하는 방법 
+#값을 전달하는 방법 : = , 함수, 
+myfunc()
+200
+if elif else end while for in #파이썬에서 사용 하는 제어문 3개
+
+mystr = "daerim dong 1234 hello"
+mystr2 = "안녕하세요, hello 010-1234-1234"
+#1234 빼기 
+#mystr2 - 영어, 한글, 숫자 몇개인지 
+mystr_num = 0
+mystr_kor = 0
+mystr_eng = 0
+mystr2_kor = ""
+mystr2_eng = ""
+mystr2_num = ""
+for i in mystr:
+    if ord(i)>=44032 and ord(i) <= 55203:
+        mystr_kor += 1
+    elif ord(i)>= 65 and ord(i)<= 122or (ord(i) == 32):
+        mystr_eng += 1
+    elif (ord(i)>= 48 and ord(i) <=58) or (ord(i) == 45):
+        mystr_num += 1
+
+for i in mystr2:
+    if ord(i)>=ord('가') and ord(i) <= ord('힣'):
+        mystr2_kor += i
+    elif ord(i)>= ord('z') and ord(i)<= ord('A'):
+        mystr2_eng += i
+    elif (ord(i)>= ord('0') and ord(i) <=ord('9')) or (ord(i) == ord('-')):
+        mystr2_num += i
+print("한국어 수:",mystr_kor)
+print("영어 수: ",mystr_eng)
+print("숫자 수: ",mystr_num,)
+print("------------------")
+print(f"한국어 :{mystr2_kor}")
+print("영어 : {}".format(mystr2_eng))
+print("숫자 : %s"%mystr2_num)
+        
+한국어 수: 0
+영어 수:  18
+숫자 수:  4
+------------------
+한국어 :안녕하세요
+영어 : 
+숫자 : 010-1234-1234
+ord('가'), ord('ㅎ'), ord('ㅣ'),ord('힣')
+(44032, 12622, 12643, 55203)
+ord('a'),ord('A'),ord('z'),ord('Z')
+(97, 65, 122, 90)
+ord('0'), ord('9'), ord('-'), ord(' ')
+(48, 57, 45, 32)
+hanCnt, upperCnt, lowerCnt, numCnt, etcCnt = [0]*5
+
+for i in mystr2:
+    if (ord(i) >= ord('A') and ord(i) <= ord('Z')):
+        upperCnt +=1
+    elif (ord(i) >= ord('a') and ord(i) <= ord('z')):
+        lowerCnt += 1 
+    elif (ord(i) >= ord('0') and ord(i) <= ord('9')):
+        numCnt += 1 
+    elif (ord(i) >= ord('가') and ord(i) <= ord('힣')):
+        hanCnt += 1
+    else:
+        etcCnt += 1 
+
+print({'hanCnt':hanCnt, 'upperCnt':upperCnt, 'lowerCnt':lowerCnt, 'numCnt':numCnt, 'etcCnt':etcCnt})
+
+{'hanCnt': 5, 'upperCnt': 0, 'lowerCnt': 5, 'numCnt': 11, 'etcCnt': 5}
